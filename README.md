@@ -1,4 +1,4 @@
-# Understanding-soccer-scouting-using-ML.-
+# Understanding-soccer-scouting-using-ML.
  An algorithm that can decompose the performance of players into its main objective elements using scouting data as a strategic asset.
 
 In the field of sports, player scouting is a critical process that involves

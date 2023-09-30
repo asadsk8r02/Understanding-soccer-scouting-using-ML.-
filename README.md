@@ -48,3 +48,64 @@ was later used for analysis.
 
 ![Screenshot (1143)](https://github.com/asadsk8r02/Understanding-soccer-scouting-using-ML.-/assets/53692166/6d17c575-2bc4-44ea-ac4a-88720f832369)
 
+
+## Feature Importance
+We considered 3 models for feature importance.
+● XGBOOST
+● LightGBM
+● CATBOOST
+
+### Extreme Gradient Boosting
+XGBoost (Extreme Gradient Boosting) is an ensemble machine learning
+algorithm that uses a gradient boosting framework to train decision trees in a parallel and optimized manner. It works by iteratively adding decision trees to the model, with each tree trained to correct the errors of the previous trees. The data was fit to the model using 100 n_estimators. To evaluate the performance of the model, the R2 score was used. The model achieved a score of 0.83 on the training data and 0.29 on the testing data
+
+![Screenshot (1144)](https://github.com/asadsk8r02/Understanding-soccer-scouting-using-ML.-/assets/53692166/3d354377-db1d-4cec-8816-22922d9c24c9)
+
+
+### Light Gradient Boosting Machine
+LightGBM (Light Gradient Boosting Machine) is another gradient boosting
+framework that is designed to be fast and efficient. It uses a histogram-based approach to split data into bins, which can significantly reduce the memory usage and speed up the training process. For LightGBM we used 170 n_estimators. To evaluate the
+performance of the model, the R2 score was used. The model achieved a score of 0.68
+on the training data and 0.32 on the testing data.
+
+![Screenshot (1145)](https://github.com/asadsk8r02/Understanding-soccer-scouting-using-ML.-/assets/53692166/2fbbcec2-a36f-4fd3-adb0-46d87a554e4e)
+
+CatBoost (“Category” and “Boosting”)
+CatBoost is a gradient boosting framework that is designed to handle
+categorical features. It uses a combination of ordered boosting and random
+permutations to handle categorical data in an efficient and accurate way. The model
+was implemented using catboost regressor and R2 score was used as performance
+measure.The model achieved a score of 0.73 on the training data and 0.37 on the
+testing data
+
+![Screenshot (1146)](https://github.com/asadsk8r02/Understanding-soccer-scouting-using-ML.-/assets/53692166/6db11e27-a85c-4bb8-a471-100989185af6)
+
+
+## Neural Network for predicting Player rating
+
+### Data Preprocessing for neural network:
+The scouting dataset contained both continuous and categorical features, and it
+was necessary to preprocess the data to prepare it for use with an ANN even after the
+initial preprocessing. First, the categorical features were identified and mapped to
+numerical values. The winner feature was mapped to 0 for loser, 1 for winner, and 2
+for draw. Similarly, the team feature was mapped to 0 for team1 and 1 for team2.
+Next, the continuous and object features were concatenated and normalized
+using min-max scaling to ensure that the input values were in the range [0,1]. The
+resulting tensor was used as the input to the neural network model.
+
+
+### Model Architecture and training:
+The input layer of the neural network had 30 nodes, which corresponds to the number
+of input features in the dataset. The hidden layers had 800 nodes each, and the output layer had a single node, which was the predicted player rating. The rectified linear unit (ReLU) activation function was used for all the hidden layers to introduce non-linearity in the model. The final output layer did not have any activation function. The neural network model was implemented using PyTorch, with the input size (number of features) specified by in_features and the output size (predicted player rating) specified by out_features = 1. The model was initialized using a seed value of 32 to ensure reproducibility of results.
+The model was trained for a total of 800 epochs using mean squared error (MSE) loss
+as the loss function. The optimizer used for training was the Adam optimizer with a
+learning rate of 0.0001.
+During each epoch, the gradients from the previous iteration were cleared using
+optimizer.zero_grad(), and the forward pass was computed by passing the normalized
+input data (train_model_input_normalized) through the neural network model. The
+loss was then calculated as the MSE between the predicted output and the actual
+output (train_y_out). The loss.backward() function performed the backward pass to
+compute the gradients of the loss with respect to the parameters of the neural network, and optimizer.step() updated the weights of the network based on these gradients.
+The model was trained on 70% of the preprocessed data, and the remaining 30% was
+used for testing. The training process was monitored by observing the loss after every 10 epochs. Finally, the duration of the training process was also noted
+

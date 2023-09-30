@@ -129,17 +129,18 @@ Additionally, a density plot was created to compare the distributions of the pre
 ### Results for 50 feature dataset: 
 For this model, the root mean squared error (RMSE) was calculated, which is a common metric for regression problems. The model achieved an RMSE of RMSE:1.090376, which turned out to be better than our previous dataset implementation.
 
-
+![Screenshot (1150)](https://github.com/asadsk8r02/Understanding-soccer-scouting-using-ML.-/assets/53692166/ef3aaeff-23fb-42c4-bdac-3b4bed22475f)
 
 Similarly for the model's performance, a scatter plot was created to visualize the
 predicted and actual values of the test set. The scatter plot showed that the predicted values were highly correlated with the actual values.
 
+![Screenshot (1151)](https://github.com/asadsk8r02/Understanding-soccer-scouting-using-ML.-/assets/53692166/f6b8c1d5-dfa7-4f59-8537-bb9581eb7c3c)
 
 
 Finally, a density plot was created to compare the distributions of the predicted and
 actual values. The density plot showed that the distributions were similar, indicating that the model's predictions were well calibrated.
 
-
+![Screenshot (1152)](https://github.com/asadsk8r02/Understanding-soccer-scouting-using-ML.-/assets/53692166/3d8c1351-108c-472b-be32-4ad504229215)
 
 Overall, the model's architecture and hyperparameters were chosen through
 experimentation to achieve the best performance, and the training process was

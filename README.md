@@ -107,5 +107,42 @@ loss was then calculated as the MSE between the predicted output and the actual
 output (train_y_out). The loss.backward() function performed the backward pass to
 compute the gradients of the loss with respect to the parameters of the neural network, and optimizer.step() updated the weights of the network based on these gradients.
 The model was trained on 70% of the preprocessed data, and the remaining 30% was
-used for testing. The training process was monitored by observing the loss after every 10 epochs. Finally, the duration of the training process was also noted
+used for testing. The training process was monitored by observing the loss after every 10 epochs. Finally, the duration of the training process was also noted.
+
+## Results:
+
+### Results for the 800 feature dataset: 
+After training the model, it was evaluated on a separate test set to check its accuracy. The root mean squared error (RMSE) was calculated, which is a common metric for regression problems. The model achieved an RMSE of 1.76142263, which was not what we anticipated but with highly imbalanced data we couldn’t agree more on such a result.
+
+![Screenshot (1147)](https://github.com/asadsk8r02/Understanding-soccer-scouting-using-ML.-/assets/53692166/1b0d10b8-c5e7-4a5c-90d0-2c076b86a317)
+
+
+To further analyze the model's performance, a scatter plot was created to visualize the predicted and actual values of the test set. The scatter plot showed that the predicted values were highly correlated with the actual values.
+
+![Screenshot (1148)](https://github.com/asadsk8r02/Understanding-soccer-scouting-using-ML.-/assets/53692166/518549f1-7f03-4991-966c-8c89b2d72980)
+
+![Screenshot (1149)](https://github.com/asadsk8r02/Understanding-soccer-scouting-using-ML.-/assets/53692166/7f88b644-6946-4b25-8c74-47404922d368)
+
+
+Additionally, a density plot was created to compare the distributions of the predicted and actual values. The density plot showed that the distributions were not very accurate due to large imbalance in the dataset despite normalization.
+
+### Results for 50 feature dataset: 
+For this model, the root mean squared error (RMSE) was calculated, which is a common metric for regression problems. The model achieved an RMSE of RMSE:1.090376, which turned out to be better than our previous dataset implementation.
+
+
+
+Similarly for the model's performance, a scatter plot was created to visualize the
+predicted and actual values of the test set. The scatter plot showed that the predicted values were highly correlated with the actual values.
+
+
+
+Finally, a density plot was created to compare the distributions of the predicted and
+actual values. The density plot showed that the distributions were similar, indicating that the model's predictions were well calibrated.
+
+
+
+Overall, the model's architecture and hyperparameters were chosen through
+experimentation to achieve the best performance, and the training process was
+successful in minimizing the loss function. The model's predictions were reasonably
+accurate, as indicated by the low RMSE value and the scatter and density plots
 

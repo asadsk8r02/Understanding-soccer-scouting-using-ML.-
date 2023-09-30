@@ -46,7 +46,5 @@ to type 'object', making them more compatible with the XGBoost regressor model t
 was later used for analysis. 
 
 
-![Screenshot (1143)](https://github.com/asadsk8r02/Understanding-soccer-scouting-using-ML.-/assets/53692166/22beff64-9f1c-4d6b-9d20-559204f5ef55)
-
-
+![Screenshot (1143)](https://github.com/asadsk8r02/Understanding-soccer-scouting-using-ML.-/assets/53692166/6d17c575-2bc4-44ea-ac4a-88720f832369)
 
